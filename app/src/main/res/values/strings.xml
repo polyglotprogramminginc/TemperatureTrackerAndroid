@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Temperature Tracker</string>
+    <string name="text_rssi_visual">Visual interpretation of the RSSI value</string>
+    <string name="degrees"> °C</string>
+    <string name="label_scan">Scan</string>
+    <string name="label_stop">Stop</string>
+    <string name="action_settings">Settings</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="forget">Forget</string>
+    <string name="clear_log">Clear Log</string>
+    <string name="reset_device">Reset Device</string>
+    <string name="label_ok">OK</string>
+    <string name="refresh">Refresh</string>
+    <string name="metawear">MetaWear</string>
+    <string name="no_metawear_connected">No Metawear Connected</string>
+    <string name="metawear_connected">Metawear Connected</string>
+    <string name="metawear_syncing">Metawear Syncing</string>
+    <string name="demo">Demo:</string>
+    <string name="temperature">Temperature</string>
+    <string name="active_calories_burned">Last 60 Samples</string>
+
+    <string name="error_title">Error</string>
+    <string name="error_no_bluetooth">Bluetooth device not deteted</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="pairing_title">Pair Device</string>
+    <string name="pairing_text">Do you see a blinking blue LED on the MetaWear?</string>
+    <string name="toast_connected">MetaWear Connected</string>
+    <string name="toast_disconnected">MetaWear Disconnected</string>
+    <string name="toast_no_board">No MetaWear Connected</string>
+    <string name="toast_in_demo_mode">Can\'t do that in demo mode.</string>
+    <string name="message_soft_reset">Board Soft Reset Issued</string>
+    <string name="error_soft_reset">Board Reset Failed</string>
+    <string name="thermistor_not_supported">Thermistor not supported or firmware needs updating.</string>
+</resources>
