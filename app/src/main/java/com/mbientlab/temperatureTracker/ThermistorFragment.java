@@ -115,7 +115,7 @@ public class ThermistorFragment extends Fragment {
                             public void commands() {
                                 tempModule.readTemperature(tempModule.getSources().get(MultiChannelTemperature.MetaWearRChannel.NRF_DIE));
                             }
-                        }, 1000, false);
+                        }, TIME_DELAY_PERIOD, false);
                 taskResult.onComplete(new AsyncOperation.CompletionHandler<Timer.Controller>() {
                     @Override
                     public void success(Timer.Controller result) {
