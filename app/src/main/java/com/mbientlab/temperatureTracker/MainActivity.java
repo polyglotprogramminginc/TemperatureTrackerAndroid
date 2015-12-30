@@ -102,7 +102,7 @@ public class MainActivity extends ActionBarActivity implements ServiceConnection
     private boolean refresh = false;
     private boolean reset = false;
     private boolean reconnect = false;
-    private boolean switching = true;
+    private boolean switching = false;
 
     /**
      * Standard Android lifecyle mehtods.
@@ -264,9 +264,11 @@ public class MainActivity extends ActionBarActivity implements ServiceConnection
                     } else {
                         if (mwScannerFragment != null) {
                             Fragment metawearBlescannerPopup = getFragmentManager().findFragmentById(R.id.metawear_blescanner_popup_fragment);
-                            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                            fragmentTransaction.remove(metawearBlescannerPopup);
-                            fragmentTransaction.commit();
+                            if(metawearBlescannerPopup != null) {
+                                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                                fragmentTransaction.remove(metawearBlescannerPopup);
+                                fragmentTransaction.commit();
+                            }
                             mwScannerFragment.dismiss();
                         }
                         mwScannerFragment = new MWScannerFragment();
@@ -285,8 +287,8 @@ public class MainActivity extends ActionBarActivity implements ServiceConnection
                                 Toast.makeText(this, R.string.error_soft_reset, Toast.LENGTH_SHORT).show();
                             }
                         } else {
-                            mwBoard.connect();
                             reset = true;
+                            mwBoard.connect();
                         }
                     } else {
                         Toast.makeText(this, R.string.toast_no_board, Toast.LENGTH_SHORT).show();
@@ -531,7 +533,8 @@ public class MainActivity extends ActionBarActivity implements ServiceConnection
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        forgetDevice(mwBoard.getMacAddress());
+                        disconnectAdapter();
+                        forgetDevice(bluetoothDevice.getAddress());
                     }
                 });
             } else if (reconnect) {

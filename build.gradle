@@ -35,11 +35,3 @@ task clean(type: Delete){
     delete rootProject.buildDir
 }
 
-/*repositories {
-    jcenter()
-    maven { url "https://jitpack.io"}
-    ivy {
-        url "http://ivyrep.mbientlab.com"
-        layout "gradle"
-    }
-}*/
